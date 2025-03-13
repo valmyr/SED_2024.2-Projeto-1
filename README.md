@@ -20,9 +20,9 @@ compartilhado. E os robôs precisam acessar o Buffer de Entrada para retirar os 
 
     O robô R3 é uma redundância do sistema, ele possuirá uma maior robustes fisíca e sua função principal é se descolar até R1 e R2, caso falhem, e coletar os insumos associcados substituindo-os. Aqui o deslocamento até o robô defeituoso foi abstraido bem como ao usar o argumento da robustes fisíca implicará que não será admito que ele falhará. 
 
-3. **Reset dos Robôs (R1 e R2):** 
+3. **Reset dos Robôs (Ri):** 
 
-    Caso um robô (R1 ou R2) falhe, ele pode ser resetado e voltar a
+    Caso um robô (Ri) falhe, ele pode ser resetado e voltar a
     funcionar normalmente. Após o reset, o robô fica apto para ser utilizado novamente. Caso
     contrário, ele permanece indisponível para novas requisições até que seja reinicializado.
 4. **Síntese do Supervisor:**
@@ -50,7 +50,7 @@ robot_reset(Ri): O robô Ri volta a funcionar normalmente após uma falha.
 ```
 ### Descrição dos Autômatos
 
-**Robô 01 e Robô 02**
+**Robô 0i**
 
 Eles são responsáveis por transportar caixas de insumos do Buffer de Entrada (BE) para à máquina de
 processamento Mx. O autômato é composto por estados e transições que modelam as ações do
@@ -66,13 +66,13 @@ robô, incluindo movimentação, falhas e reset.
 **Transições:**
 
 ```
-move(Ri, BE, Mx) : O robô R1 transporta uma caixa do Buffer de Entrada (BE) para a máquina Mx
+move(Ri, BE, Mx) : O robô Ri transporta uma caixa do Buffer de Entrada (BE) para a máquina Mx
 (M1, M2, M3 ou M4).
 wait(Ri) : O robô Ri aguarda caso o Buffer de Entrada (BE) esteja ocupado.
 unload(Ri, Mx) : O robô Ri entrega a caixa na máquina Mx.
 robot_fault(Ri) : O robô Ri apresenta uma falha durante o transporte, levando a um dos estados
 de falha (Robot_faultRi_Mx).
-robot_reset(Ri) : O robô R1 é resetado e volta a funcionar normalmente após uma falha,
+robot_reset(Ri) : O robô Ri é resetado e volta a funcionar normalmente após uma falha,
 retornando ao estado inicial, ficando disponível para novas requisições.
 ```
 **Eventos:**
@@ -120,8 +120,8 @@ ações do robô, incluindo movimentação, descarga de caixas, falhas e substit
     Buffer de Entrada (BE) para a máquina M3 ou M4.
 3. **BASE3_SWAP_R1TO_R3** : Estado onde o robô R3 substitui o robô R1 em caso de falha.
 4. **BASE3_SWAP_R2TO_R3** : Estado onde o robô R3 substitui o robô R2 em caso de falha.
-5. **Robot_faultR1** : Estado onde o robô R1 falhou, e o robô R3 pode assumir suas tarefas.
-6. **Robot_faultR2** : Estado onde o robô R2 falhou, e o robô R3 pode assumir suas tarefas.
+5. **Robot_faultRi** : Estado onde o robô Ri falhou, e o robô R3 pode assumir suas tarefas.
+
 
 **Transições:**
 
