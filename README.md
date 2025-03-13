@@ -103,8 +103,13 @@ Eventos Não Controláveis:
     Em caso de falha, o robô R3 pode substituir o Ri, assumindo a tarefa de transporte. O estado
     SWAP_ROBOT1 representa essa substituição onde ele vai até o robô defeituoso coleta o insumo e continua a tarefa associada a Ri.
 
-<img src="img/robo_1.png" width="300" />
-<img src="img/robo2.png" width="300" />
+
+
+
+
+| Robô 1  | Robô 2 | 
+|----------|----------|
+| ![example](img/robo_1.png) | ![example](img/robo2.png) |  
 ### Robô 03
 
 
@@ -148,12 +153,14 @@ Robot_faultRi: O robô Ri apresenta uma falha, e o robô R3 assume suas tarefas.
     O robô R3 começa no estado **BASE3** ao ocorrer uma falha Robot_faultRi alterá para o estado **BASE3_SWAP_R1TO_R3** ao ocorrer moveR3_Mx irá para **TRANSPORTING_SUPPLIES_3_Mx**, onde ele transportará o suprimentos do Buffer de
     Entrada (BE) para as máquinas ou a descarga do suprimento da máquina Mx.
     e/ou unloadR3_Mx que voltará para o estado inical **BABSE3**
-<img src="img/robo_3.png" width="300" />
 ### Máquina 0x
 
 Ela modela os estados da máquina Mx, incluindo operações normais, falhas de robôs, requisições de
 transporte e interações com os robôs Ri.
 
+| Robô 3  | 
+|----------|
+| ![example](img/robo_3.png) |
 ### Descrição dos Estados do Autômato M
 
 **Estados:**
