@@ -184,7 +184,10 @@ transporte e interações com os robôs Ri.
 9. **unloadR3_Mx** : Estado onde o robô R3 descarrega uma caixa na máquina Mx.
 10. **moveR3_Mx** : Estado onde o robô R3 está transportando uma caixa do Buffer de Entrada (BE) para
 a máquina Mx.
+
+
 ### Funcionamento do Autômato Mx
+
 1. **Operação Normal:**
     A máquina Mx começa no estado **IDLE_Mx** , onde está ociosa e aguarda uma requisição de
     transporte.
@@ -209,12 +212,11 @@ a máquina Mx.
 |----------|----------|
 | ![example](img/maquina_3.png) | ![example](img/maquina_4.png) |
 
-<p align="center" width="100%">
-    <img width="32%" src="img/robo_3.png"> 
-</p>
-
-
 Modelo completo
+
+<p align="center" width="100%">
+    <img width="100%" src="img/sistema_completa.png"> 
+</p>
 ## Como Executar o Projeto
 
 Para executar o projeto e entender o funcionamento do sistema
