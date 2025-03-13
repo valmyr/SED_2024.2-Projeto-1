@@ -158,11 +158,10 @@ Robot_faultRi: O robô Ri apresenta uma falha, e o robô R3 assume suas tarefas.
 Ela modela os estados da máquina Mx, incluindo operações normais, falhas de robôs, requisições de
 transporte e interações com os robôs Ri.
 
-| Robô 3  | 
-|----------|
-| ![example](img/robo_3.png) |
 
-
+<p align="center" width="100%">
+    <img width="32%" src="img/robo_3.png"> 
+</p>
 ### Descrição dos Estados do Autômato M
 
 **Estados:**
@@ -200,6 +199,15 @@ a máquina Mx.
     **Ri_FAULT_WAIT_R3_WORK_Mx**.
     O robô R3 realiza o transporte da caixa para a máquina Mx (moveR3_Mx) e descarrega a caixa
     (unloadR3_Mx).
+
+| Máquina 1  | Máquina 2 | 
+|----------|----------|
+| ![example](img/maquina_1.png) | ![example](img/maquina_2.png) |  
+
+
+| Máquina 3  | Máquina 4 | 
+|----------|----------|
+| ![example](img/maquina_3.png) | ![example](img/maquina_4.png) |
 ## Como Executar o Projeto
 
 Para executar o projeto e entender o funcionamento do sistema
