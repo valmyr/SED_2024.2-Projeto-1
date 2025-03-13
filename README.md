@@ -193,66 +193,36 @@ a máquina Mx.
 Para executar o projeto e entender o funcionamento do sistema
 
 ### 1. Instalar o Java
-
 O Supremica requer o Java para funcionar,para instalar o Java Development Kit (JDK):
-
 **Passo 1: Atualize o sistema**
-
 sudo apt update
-
 **Passo 2: Instale o JDK**
-
 Você pode instalar o OpenJDK, que é uma versão aberta do Java:
-
 sudo apt install openjdk-17-jdk
-
-
 **Passo 3: Verifique a instalação**
-
 Após a instalação, verifique se o Java foi instalado corretamente:
-
 java -version
-
 ### 2. Instalar o Graphviz
-
 O Graphviz é necessário para visualizar os diagramas gerados pelo Supremica.
-
 **Passo 1: Instale o Graphviz**
-
 sudo apt install graphviz
-
 **Passo 2: Verifique a instalação**
-
-Após a instalação, verifique se o Graphviz foi instalado corretamente:
-
-dot -V
-
+Após a instalação, verifique se o Graphviz foi instalado corretamente: dot -V
 ### 3. Baixar e Executar o Supremica
-
 Agora que o Java e o Graphviz estão instalados, você pode baixar e executar o Supremica.
-
 **Baixe o Supremica**
-
 Acesse o link da versão mais recente do Supremica no GitHub:
 Release Waters/Supremica IDE 2.7.
-
 Baixe o arquivo .jar para o seu diretório de trabalho.
-
 **Execute o Supremica**
-
 Navegue até o diretório onde o arquivo .jar foi baixado e execute
-
 java -jar Supremica.jar
-
 Você também poderá baixar um script para baixar e instalar todas as depedências necessárias em
 install.sh
-
 ### Vídeo de Demonstração
-
 Para uma explicação detalhada do funcionamento do sistema e uma demonstração da simulação,
 assista ao vídeo no YouTube:
 Vídeo de Demonstração
-
 ### Contribuidores
 
 
