@@ -161,6 +161,8 @@ transporte e interações com os robôs Ri.
 | Robô 3  | 
 |----------|
 | ![example](img/robo_3.png) |
+
+
 ### Descrição dos Estados do Autômato M
 
 **Estados:**
