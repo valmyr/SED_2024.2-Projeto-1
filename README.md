@@ -50,7 +50,7 @@ robot_reset(Ri): O robô Ri volta a funcionar normalmente após uma falha.
 ```
 ### Descrição dos Autômatos
 
-**Robô 0i**
+**Robô i**
 
 Eles são responsáveis por transportar caixas de insumos do Buffer de Entrada (BE) para à máquina de
 processamento Mx. O autômato é composto por estados e transições que modelam as ações do
@@ -102,6 +102,9 @@ Eventos Não Controláveis:
 
     Em caso de falha, o robô R3 pode substituir o Ri, assumindo a tarefa de transporte. O estado
     SWAP_ROBOT1 representa essa substituição onde ele vai até o robô defeituoso coleta o insumo e continua a tarefa associada a Ri.
+
+<img src="img/robo_1.png" width="300" />
+<img src="img/robo_2.png" width="300" />
 ### Robô 03
 
 
