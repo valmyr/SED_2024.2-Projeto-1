@@ -208,6 +208,13 @@ a máquina Mx.
 | Máquina 3  | Máquina 4 | 
 |----------|----------|
 | ![example](img/maquina_3.png) | ![example](img/maquina_4.png) |
+
+<p align="center" width="100%">
+    <img width="32%" src="img/robo_3.png"> 
+</p>
+
+
+Modelo completo
 ## Como Executar o Projeto
 
 Para executar o projeto e entender o funcionamento do sistema
