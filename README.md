@@ -214,9 +214,7 @@ a máquina Mx.
 
 Modelo completo
 
-<p align="center" width="100%">
-    <img width="100%" src="img/sistema_completa.png"> 
-</p>
+
 ## Como Executar o Projeto
 
 Para executar o projeto e entender o funcionamento do sistema
