@@ -1,7 +1,9 @@
-## Contribuidores
+# Contribuidores
+
 - Alexandre Basílio da Silva Júnior - 119110494 
 - Marcos Aurélio Pinheiro Leal      - 124110974 
 - Valmir Ferreira da Silva          - 119211110
+  
 # Controle de um Sistema de Robôs Autônomos em um Armazém
 
 ## Descrição do Projeto
