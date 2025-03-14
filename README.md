@@ -3,9 +3,12 @@
 - Alexandre Basílio da Silva Júnior - 119110494 
 - Marcos Aurélio Pinheiro Leal      - 124110974 
 - Valmir Ferreira da Silva          - 119211110
-  
-# Controle de um Sistema de Robôs Autônomos em um Armazém
 
+# Vídeo de Demonstração
+Para uma explicação detalhada do funcionamento do sistema e uma demonstração da simulação,
+[Vídeo de Demonstração do Funcionamento](https://youtu.be/cJdnjmNx034)
+
+# Controle de um Sistema de Robôs Autônomos em um Armazém
 ## Descrição do Projeto
 
 Este projeto tem como objetivo desenvolver um sistema de controle supervisionado para robôs autônomos em um armazém automatizado. O sistema é composto por três robôs (R1, R2 e R3) que transportam caixas de insumos entre um buffer de com duas Entrada (BE) e quatro máquinas de processamento (M1, M2, M3 e M4).
@@ -260,10 +263,6 @@ java -jar Supremica.jar
 ```
 Você também poderá baixar um script para baixar e instalar todas as depedências necessárias em
 install.sh
-### Vídeo de Demonstração
-Para uma explicação detalhada do funcionamento do sistema e uma demonstração da simulação,
-[Vídeo de Demonstração do Funcionamento](https://youtu.be/cJdnjmNx034)
-
 
 
 ### Links Úteis
