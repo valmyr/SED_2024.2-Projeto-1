@@ -1,17 +1,21 @@
+### Contribuidores
+- Alexandre Basílio da Silva Júnior - 119110494 
+- Marcos Aurélio Pinheiro Leal      - 124110974 
+- Valmir Ferreira da Silva          - 119211110
 # Controle de um Sistema de Robôs Autônomos em um Armazém
 
 ## Descrição do Projeto
 
-Este projeto tem como objetivo desenvolver um sistema de controle supervisionado para robôs autônomos em um armazém automatizado. O sistema é composto por três robôs (R1, R2 e R3) que transportam caixas de insumos entre dois Buffers de Entrada (BE1 e BE2) e quatro máquinas de processamento (M1, M2, M3 e M4).
+Este projeto tem como objetivo desenvolver um sistema de controle supervisionado para robôs autônomos em um armazém automatizado. O sistema é composto por três robôs (R1, R2 e R3) que transportam caixas de insumos entre um buffer de com duas Entrada (BE) e quatro máquinas de processamento (M1, M2, M3 e M4).
 
 ### Problema Resolvido
 
-O problema central deste projeto é a coordenação de múltiplos robôs autônomos em um ambiente compartilhado, onde eles precisam acessar os Buffers de Entrada para retirar insumos e entregá-los às máquinas de processamento. Para garantir a segurança e eficiência do sistema, foram implementadas as seguintes soluções:
+O problema central deste projeto é a coordenação de múltiplos robôs autônomos em um ambiente compartilhado, onde eles precisam acessar o Buffer de Entrada para retirar insumos e entregá-los às máquinas de processamento:
 
 1. **Controle de Acesso aos Buffers de Entrada (BE1 e BE2):**
-   - Para simplificar o modelo e evitar colisões, foram adotados dois Buffers de Entrada (BE1 e BE2). Isso permite que os robôs acessem diferentes áreas de coleta de insumos simultaneamente, reduzindo a necessidade de espera e minimizando o risco de conflitos.
+   - Para simplificar o modelo e evitar colisões, foram adotados um Buffer com duas de Entrada. Isso permite que os robôs acessem diferentes áreas de coleta de insumos simultaneamente, reduzindo a necessidade de modelar o risco de conflitos.
   -  simultaneamente, tornando desnecessidade dos eventos de espera(wait) e risco de colisões(risk_collison).
-  -   O robô R3 é uma redundância do sistema, ele possuirá uma maior robustes fisíca e sua função principal é se descolar até R1 e R2, caso falhem, e coletar os insumos associcados substituindo-os. Aqui o deslocamento até o robô defeituoso foi abstraido bem como ao usar o argumento da robustes fisíca implicará que não será admito que ele falhará.
+  -   O robô R3 é uma redundância do sistema, ele possuirá uma maior robustes fisíca e sua função principal é se descolar até R1 e R2, caso falhem, e coletar os insumos associcados substituindo-os. Aqui o deslocamento até o robô defeituoso foi abstraido bem como ao usar o argumento da robustes fisíca implicará que não será admito que ele falhará no  modelo desenvolvido foi considerado também que só teremos solicitações de requisições para os robôs R1 e R2 caso falhem, R3 assumira, mas não atenderá requisições obrigando que os robôs 1 e 2 sejam reiniciados apenas simplificações de projeto.
 
 2. **Tratamento de Falhas:**
    - **O robô R3 foi designado como substituto em caso de falha de R1 ou R2. Quando um robô falha, o R3 assume a tarefa do robô que falhou, deslocando-se para o local onde a falha ocorreu e completando a tarefa solicitada.**
@@ -257,10 +261,7 @@ install.sh
 ### Vídeo de Demonstração
 Para uma explicação detalhada do funcionamento do sistema e uma demonstração da simulação,
 [Vídeo de Demonstração do Funcionamento](https://youtu.be/cJdnjmNx034)
-### Contribuidores
-- Alexandre Basílio da Silva Júnior
-- Marcus
-- Valmyr
+
 
 
 ### Links Úteis
