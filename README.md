@@ -6,7 +6,7 @@
 
 # Vídeo de Demonstração
 Para uma explicação detalhada do funcionamento do sistema e uma demonstração da simulação,
-[Vídeo de Demonstração do Funcionamento](https://youtu.be/cJdnjmNx034)
+[Vídeo de Demonstração do Funcionamento](https://www.youtube.com/watch?v=f192CJpGVXY&ab_channel=JoseAndrewPessoaDeOliveira)
 
 # Controle de um Sistema de Robôs Autônomos em um Armazém
 ## Descrição do Projeto
