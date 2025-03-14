@@ -17,8 +17,8 @@ Este projeto tem como objetivo desenvolver um sistema de controle supervisionado
 
 O problema central deste projeto é a coordenação de múltiplos robôs autônomos em um ambiente compartilhado, onde eles precisam acessar o Buffer de Entrada para retirar insumos e entregá-los às máquinas de processamento:
 
-1. **Controle de Acesso aos Buffers de Entrada (BE1 e BE2):**
-   - Para simplificar o modelo e evitar colisões, foram adotados um Buffer com duas de Entrada. Isso permite que os robôs acessem diferentes áreas de coleta de insumos simultaneamente, reduzindo a necessidade de modelar o risco de conflitos.
+1. **Controle de Acesso o buffer de Entrada (BE):**
+   - Para simplificar o modelo e evitar colisões, foram adotados um Buffer com duas de entradas permitindo que os robôs acessem diferentes áreas de coleta de insumos simultaneamente, reduzindo a necessidade de modelar o risco de conflitos.
   -  simultaneamente, tornando desnecessidade dos eventos de espera(wait) e risco de colisões(risk_collison).
   -   O robô R3 é uma redundância do sistema, ele possuirá uma maior robustes fisíca e sua função principal é se descolar até R1 e R2, caso falhem, e coletar os insumos associcados substituindo-os. Aqui o deslocamento até o robô defeituoso foi abstraido bem como ao usar o argumento da robustes fisíca implicará que não será admito que ele falhará no  modelo desenvolvido foi considerado também que só teremos solicitações de requisições para os robôs R1 e R2 caso falhem, R3 assumira, mas não atenderá requisições obrigando que os robôs 1 e 2 sejam reiniciados apenas simplificações de projeto.
 
