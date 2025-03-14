@@ -213,8 +213,12 @@ a máquina Mx.
 |----------|----------|
 | ![example](img/maquina_3.png) | ![example](img/maquina_4.png) |
 
-Modelo completo
 
+### Sistema completo
+
+<p align="center" width="100%">
+    <img width="100%" src="img/sistema_completo.png"> 
+</p>
 
 ## Como Executar o Projeto
 
