@@ -172,17 +172,18 @@ transporte e interações com os robôs Ri.
     Buffer de Entrada (BE) para a máquina Mx.
 3. **WORK_Mx** : Estado onde a máquina Mx está processando/trabalhando em uma caixa de insumos entregue pelo
     robô Ri.
-4. **Robot_faultRi** : Estado onde o robô Ri falhou durante o transporte de uma caixa para a máquina
+4. **READY_Mx** : Estado onde o robô Ri leva o insumo para a máquina Mx que realizou a solicitação.
+5. **Robot_faultRi** : Estado onde o robô Ri falhou durante o transporte de uma caixa para a máquina
     Mx.
-5. **Ri_FAULT_WAIT_R3_WORK_Mx** : Estado onde a máquina Mx aguarda que o robô R3 assuma a
+6. **Ri_FAULT_WAIT_R3_WORK_Mx** : Estado onde a máquina Mx aguarda que o robô R3 assuma a
     tarefa de transporte após a falha do robô Ri.
-6. **BUSY_Ri_Mx** : Estado onde o robô Ri está ocupado transportando uma caixa para a máquina M2,
+7. **BUSY_Ri_Mx** : Estado onde o robô Ri está ocupado transportando uma caixa para a máquina M2,
     e a máquina Mx aguarda sua disponibilidade.
-7. **RequestRi_Mx** : Estado onde a máquina Mx solicita ao robô Ri para transportar uma caixa para a
+8. **RequestRi_Mx** : Estado onde a máquina Mx solicita ao robô Ri para transportar uma caixa para a
     máquina Mx.
-8. **unloadR1_Mx** : Estado onde o robô R1 descarrega uma caixa na máquina M1 ou M2.
-9. **unloadR3_Mx** : Estado onde o robô R3 descarrega uma caixa na máquina Mx.
-10. **moveR3_Mx** : Estado onde o robô R3 está transportando uma caixa do Buffer de Entrada (BE) para
+9. **unloadR1_Mx** : Estado onde o robô R1 descarrega uma caixa na máquina M1 ou M2.
+10. **unloadR3_Mx** : Estado onde o robô R3 descarrega uma caixa na máquina Mx.
+11. **moveR3_Mx** : Estado onde o robô R3 está transportando uma caixa do Buffer de Entrada (BE) para
 a máquina Mx.
 
 
