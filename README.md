@@ -1,4 +1,4 @@
-,,,,,,,,,,,,,,,,,,,,,# Controle de um Sistema de Robôs Autônomos em um Armazém
+# Controle de um Sistema de Robôs Autônomos em um Armazém
 
 ### Descrição do Projeto
 
