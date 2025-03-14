@@ -153,12 +153,12 @@ Robot_faultRi: O robô Ri apresenta uma falha, e o robô R3 assume suas tarefas.
 </p>
 
 
-### Máquina 0x
+### Máquina Mx
 
 Ela modela os estados da máquina Mx, incluindo operações normais, falhas de robôs, requisições de
 transporte e interações com os robôs Ri.
 
-### Descrição dos Estados do Autômato M
+### Descrição dos Estados do Autômato Mx
 
 **Estados:**
 
