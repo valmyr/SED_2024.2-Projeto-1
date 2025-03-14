@@ -1,36 +1,26 @@
 # Controle de um Sistema de Robôs Autônomos em um Armazém
 
-### Descrição do Projeto
+## Descrição do Projeto
 
-Este projeto tem como objetivo desenvolver um sistema de controle supervisionado para robôs
-autônomos em um armazém automatizado. O sistema é composto por três robôs (R1, R2 e R3) que
-transportam caixas de insumos entre um Buffer de Entrada (BE) e quatro máquinas de
-processamento (M1, M2, M3 e M4). 
+Este projeto tem como objetivo desenvolver um sistema de controle supervisionado para robôs autônomos em um armazém automatizado. O sistema é composto por três robôs (R1, R2 e R3) que transportam caixas de insumos entre dois Buffers de Entrada (BE1 e BE2) e quatro máquinas de processamento (M1, M2, M3 e M4).
 
 ### Problema Resolvido
 
-O problema central deste projeto é a coordenação de múltiplos robôs autônomos usando as ferrammentas abordadas no curso, onde temos um ambiente
-compartilhado. E os robôs precisam acessar o Buffer de Entrada para retirar os insumos e entregá-los às máquinas de processamento.
+O problema central deste projeto é a coordenação de múltiplos robôs autônomos em um ambiente compartilhado, onde eles precisam acessar os Buffers de Entrada para retirar insumos e entregá-los às máquinas de processamento. Para garantir a segurança e eficiência do sistema, foram implementadas as seguintes soluções:
 
-1. **Controle de Acesso ao Buffer de Entrada (BE):**
+1. **Controle de Acesso aos Buffers de Entrada (BE1 e BE2):**
+   - Para simplificar o modelo e evitar colisões, foram adotados dois Buffers de Entrada (BE1 e BE2). Isso permite que os robôs acessem diferentes áreas de coleta de insumos simultaneamente, reduzindo a necessidade de espera e minimizando o risco de conflitos.
+  -  simultaneamente, tornando desnecessidade dos eventos de espera(wait) e risco de colisões(risk_collison).
+  -   O robô R3 é uma redundância do sistema, ele possuirá uma maior robustes fisíca e sua função principal é se descolar até R1 e R2, caso falhem, e coletar os insumos associcados substituindo-os. Aqui o deslocamento até o robô defeituoso foi abstraido bem como ao usar o argumento da robustes fisíca implicará que não será admito que ele falhará.
 
-    Para simplificar o modelo foram criadas algumas abstrações, o buffer de entrada possue dois locais para disponibilizar insumos. Isso permite que os robôs acessem diferentes áreas de coleta
-    simultaneamente, tornando desnecessidade dos eventos de espera(wait) e risco de colisões(risk_collison).
 2. **Tratamento de Falhas:**
+   - **O robô R3 foi designado como substituto em caso de falha de R1 ou R2. Quando um robô falha, o R3 assume a tarefa do robô que falhou, deslocando-se para o local onde a falha ocorreu e completando a tarefa solicitada.**
+   - Eventos de falha e reinicialização dos robôs foram modelados para garantir que o sistema possa se recuperar de problemas inesperados.
+   - **Reset dos Robôs (R1 e R2):** Caso um robô (R1 ou R2) falhe, ele pode ser resetado e voltar a funcionar normalmente. Após o reset, o robô fica apto para ser utilizado novamente. Caso contrário, ele permanece indisponível para novas requisições até que seja reinicializado.
 
-    O robô R3 é uma redundância do sistema, ele possuirá uma maior robustes fisíca e sua função principal é se descolar até R1 e R2, caso falhem, e coletar os insumos associcados substituindo-os. Aqui o deslocamento até o robô defeituoso foi abstraido bem como ao usar o argumento da robustes fisíca implicará que não será admito que ele falhará. 
-
-3. **Reset dos Robôs (Ri):** 
-
-    Caso um robô (Ri) falhe, ele pode ser resetado e voltar a
-    funcionar normalmente. Após o reset, o robô fica apto para ser utilizado novamente. Caso
-    contrário, ele permanece indisponível para novas requisições até que seja reinicializado.
-4. **Síntese do Supervisor:**
-
-    Utilizamos a ferramenta Supremica para modelar o sistema e gerar um supervisor que garante
-a operação segura e eficiente dos robôs.
-O supervisor foi projetado para lidar com eventos controláveis (como movimentação dos robôs)
-e não controláveis (como falhas e solicitações de transporte).
+3. **Síntese do Supervisor:**
+   - Utilizamos a ferramenta Supremica para modelar o sistema e gerar um supervisor que garante a operação segura e eficiente dos robôs.
+   - O supervisor foi projetado para lidar com eventos controláveis (como movimentação dos robôs) e não controláveis (como falhas e solicitações de transporte).
 
 ### Funcionamento do Sistema
 
@@ -50,7 +40,7 @@ robot_reset(Ri): O robô Ri volta a funcionar normalmente após uma falha.
 ```
 ### Descrição dos Autômatos
 
-**Robô i**
+**Robô R1 e R2**
 
 Eles são responsáveis por transportar caixas de insumos do Buffer de Entrada (BE) para à máquina de
 processamento Mx. O autômato é composto por estados e transições que modelam as ações do
@@ -100,8 +90,7 @@ Eventos Não Controláveis:
     ficando disponível para novas requisições.
 3. **Substituição por R3:**
 
-    Em caso de falha, o robô R3 pode substituir o Ri, assumindo a tarefa de transporte. O estado
-    SWAP_ROBOT1 representa essa substituição onde ele vai até o robô defeituoso coleta o insumo e continua a tarefa associada a Ri.
+    **Em caso de falha, o robô R3 irá substituir o Ri, assumindo a tarefa de transporte. O estado SWAP_ROBOT1 representa essa substituição, em que o R3 se desloca até o local do robô defeituoso, coleta o insumo e continua a execução da tarefa associada ao Ri.**
 
 
 
@@ -228,35 +217,48 @@ Para executar o projeto e entender o funcionamento do sistema
 ### 1. Instalar o Java
 O Supremica requer o Java para funcionar,para instalar o Java Development Kit (JDK):
 **Passo 1: Atualize o sistema**
+```bash
 sudo apt update
+```
 **Passo 2: Instale o JDK**
 Você pode instalar o OpenJDK, que é uma versão aberta do Java:
+```bash
 sudo apt install openjdk-17-jdk
+```
 **Passo 3: Verifique a instalação**
 Após a instalação, verifique se o Java foi instalado corretamente:
+```bash
 java -version
+```
 ### 2. Instalar o Graphviz
 O Graphviz é necessário para visualizar os diagramas gerados pelo Supremica.
 **Passo 1: Instale o Graphviz**
+```bash
 sudo apt install graphviz
+```
 **Passo 2: Verifique a instalação**
-Após a instalação, verifique se o Graphviz foi instalado corretamente: dot -V
+Após a instalação, verifique se o Graphviz foi instalado corretamente:
+```bash
+dot -V
+```
 ### 3. Baixar e Executar o Supremica
 Agora que o Java e o Graphviz estão instalados, você pode baixar e executar o Supremica.
 **Baixe o Supremica**
 Acesse o link da versão mais recente do Supremica no GitHub:
-Release Waters/Supremica IDE 2.7.
-Baixe o arquivo .jar para o seu diretório de trabalho.
+[Release Waters/Supremica IDE 2.7.1](https://github.com/robimalik/Waters/releases/tag/Supremica-IDE-2.7.1)
+Baixe o arquivo `.jar` para o seu diretório de trabalho.
 **Execute o Supremica**
-Navegue até o diretório onde o arquivo .jar foi baixado e execute
+Navegue até o diretório onde o arquivo `.jar` foi baixado e execute
+```bash
 java -jar Supremica.jar
+```
 Você também poderá baixar um script para baixar e instalar todas as depedências necessárias em
 install.sh
 ### Vídeo de Demonstração
 Para uma explicação detalhada do funcionamento do sistema e uma demonstração da simulação,
-assista ao vídeo no YouTube: https://youtu.be/cJdnjmNx034
-Vídeo de Demonstração
+[Vídeo de Demonstração](https://youtu.be/cJdnjmNx034)
 ### Contribuidores
+- Alexandre Basílio da SIlva Júnior
 
 
 ### Links Úteis
