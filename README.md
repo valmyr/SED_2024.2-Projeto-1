@@ -256,17 +256,17 @@ Você também poderá baixar um script para baixar e instalar todas as depedênc
 install.sh
 ### Vídeo de Demonstração
 Para uma explicação detalhada do funcionamento do sistema e uma demonstração da simulação,
-[Vídeo de Demonstração](https://youtu.be/cJdnjmNx034)
+[Vídeo de Demonstração do Funcionamento](https://youtu.be/cJdnjmNx034)
 ### Contribuidores
-- Alexandre Basílio da SIlva Júnior
+- Alexandre Basílio da Silva Júnior
+- Marcus
+- Valmyr
 
 
 ### Links Úteis
 
-```
-Tutorial Supremica: Um mini tutorial sobre como usar o Supremica.
-Repositório do Projeto: Link para o repositório no GitHub.
-```
+- [Tutorial Supremica](https://github.com/kyllercg/tutorial-supremica): Um mini tutorial sobre como usar o Supremica.
+  
 Este projeto foi desenvolvido como parte da disciplina de Sistemas de Eventos Discretos (SED) e visa
 demonstrar a aplicação de controle supervisionado em sistemas de robótica autônoma. A adoção de
 dois Buffers de Entrada e o tratamento eficiente de falhas dos robôs são aspectos importantes que
