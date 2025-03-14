@@ -245,7 +245,7 @@ dot -V
 Agora que o Java e o Graphviz estão instalados, você pode baixar e executar o Supremica.
 **Baixe o Supremica**
 Acesse o link da versão mais recente do Supremica no GitHub:
-[Release Waters/Supremica IDE 2.7.1](https://github.com/robimalik/Waters/releases/tag/Supremica-IDE-2.7.1)
+[Release Waters/Supremica IDE 2.7.1](https://github.com/robimalik/Waters/releases/tag/v2.7.1)
 Baixe o arquivo `.jar` para o seu diretório de trabalho.
 **Execute o Supremica**
 Navegue até o diretório onde o arquivo `.jar` foi baixado e execute
